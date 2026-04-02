@@ -1,5 +1,3 @@
-//TIP 코드를 <b>실행</b>하려면 <shortcut actionId="Run"/>을(를) 누르거나
-// 에디터 여백에 있는 <icon src="AllIcons.Actions.Execute"/> 아이콘을 클릭하세요.
 public class Main {
     public static void main(String[] args) {
         RandomNumber randomNumber = new RandomNumber();
@@ -10,5 +8,20 @@ public class Main {
         System.out.println(newNum[0]);
         System.out.println(newNum[1]);
         System.out.println(newNum[2]);
+
+        GameFlowController gameFlowController = new GameFlowController();
+        String decideGameStart = gameFlowController.decideGameStart();
+        int playCount = gameFlowController.getPlayCount();
+
+        if (decideGameStart.equals("Y")) {
+            // 게임 실행
+            System.out.println("게임을 시작합니다.");
+            System.out.println("총 진행된 게임 횟수 : " + playCount);
+
+        } else {
+            // 게임 종료
+            System.out.println("게임을 종료합니다.");
+        }
     }
+
 }
