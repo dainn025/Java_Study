@@ -1,35 +1,12 @@
 import java.util.Scanner;
 
+// 게임 진행 class
 public class GameFlowController {
-    private Scanner sc;
-    private String userChoic;  // 게임진행 여부 (사용자 선택)
+    private Scanner sc = new Scanner(System.in);;
     private int playCount;  // 게임진행 횟수
-
-    /*
-    public String decideGameStart () {
-        sc = new Scanner(System.in);
-
-        if (this.playCount == 0) {
-            System.out.println("게임을 시작하시겠습니까? (Y or N)");
-
-        } else {
-            System.out.println("게임을 계속 진행하시겠습니까? (Y or N)");
-        }
-
-        this.userChoic = sc.next();
-
-        userAnswer(userChoic);
-
-        if (userChoic.equals("Y")) {
-            this.playCount += 1;  // 게임진행 횟수 증가
-        }
-
-        return userChoic; // 게임 진행 여부
-    } */
 
     // 사용자에게 게임 진행 질문 후 입력값 수집
     private String askUser() {
-        sc = new Scanner(System.in);
 
         if (playCount == 0) {
             System.out.println("게임을 시작하시겠습니까? (Y or N)");
@@ -57,12 +34,12 @@ public class GameFlowController {
         answer = validateAnswer(answer);
 
         if (answer.equals("Y")) {
-            playCount += 1;  // 게임실행 횟수 증가
+            playCount += 1;   // 입력 값이 Y 인 경우 게임진행 횟수 증가
         }
         return answer;
-
     }
 
+    // 게임 진행 횟수 return
     public int getPlayCount() {
         return playCount;
     }

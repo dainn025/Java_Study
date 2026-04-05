@@ -1,5 +1,6 @@
 import java.util.Random;
 
+// 랜덤 숫자 생성하는 class
 public class RandomNumber {
     private int[] numbers; // 랜덤숫자를 저장하는 변수
 
