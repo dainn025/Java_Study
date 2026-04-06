@@ -14,6 +14,6 @@ public class NumberInputReader {
 
     // 입력값 return
     public String getUserNumbers() {
-        return this.userNumbers;
+        return this.userNumbers.trim();
     }
 }

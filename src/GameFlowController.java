@@ -1,13 +1,12 @@
 import java.util.Scanner;
 
-// 게임 진행 class
+// 게임 진행 class → 시작할지 / 계속할지 / 종료할지 판단
 public class GameFlowController {
     private Scanner sc = new Scanner(System.in);;
-    private int playCount;  // 게임진행 횟수
+    private int playCount;  // 한 게임 내 시도 횟수
 
     // 사용자에게 게임 진행 질문 후 입력값 수집
     private String askUser() {
-
         if (playCount == 0) {
             System.out.println("게임을 시작하시겠습니까? (Y or N)");
         } else {
@@ -37,6 +36,15 @@ public class GameFlowController {
             playCount += 1;   // 입력 값이 Y 인 경우 게임진행 횟수 증가
         }
         return answer;
+    }
+
+    // 게임 진행횟수 초기화
+    public void resetPlayCount() {
+        this.playCount = 0;
+    }
+
+    public void incrementPlayCount() {
+        this.playCount += 1;
     }
 
     // 게임 진행 횟수 return

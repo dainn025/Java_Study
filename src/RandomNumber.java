@@ -12,12 +12,13 @@ public class RandomNumber {
     // 랜덤숫자 생성하는 메소드
     public void generate() {
         Random random = new Random();
-        boolean b_overlap = false;
 
         for (int i = 0; i < numbers.length; i++) {
             int num = 0;
+            boolean b_overlap;
 
             do {
+                b_overlap = false;
                 num = random.nextInt(9) + 1;
 
                 for (int j = 0; j < i; j++) {
@@ -29,6 +30,7 @@ public class RandomNumber {
                     }
                 }
             } while (b_overlap);
+
             numbers[i] = num;
         }
     }
