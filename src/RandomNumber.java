@@ -15,21 +15,21 @@ public class RandomNumber {
 
         for (int i = 0; i < numbers.length; i++) {
             int num = 0;
-            boolean b_overlap;
+            boolean isOverlap;
 
             do {
-                b_overlap = false;
+                isOverlap = false;
                 num = random.nextInt(9) + 1;
 
                 for (int j = 0; j < i; j++) {
                     if (numbers[j] == num) {
 
                         // 숫자 중복 O
-                        b_overlap = true;
+                        isOverlap = true;
                         break;
                     }
                 }
-            } while (b_overlap);
+            } while (isOverlap);
 
             numbers[i] = num;
         }
